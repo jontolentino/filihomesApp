@@ -1,47 +1,53 @@
 <nav>
     <div class="main-nav">
-        <h1>Filihomes</h1>
-        <span>Register</span>
-        <span>Login</span>
+        <h1 id="site-title-h1">FILIHOMES</h1>
+        <div class="main-nav-item">
+            <span>Register</span>
+            <span>Login</span>
+        </div>
     </div>
 </nav>
 <main>
-    <h2>More Inquiries,<br>More Sales</h2>
-    <p>Free Real Estate Listings Website for Filipino Brokers</p>
-    <div class="register-button-in-main">
-        Register Now
-    </div>
+    <section id="hero-section">
+        <h2>More Inquiries, More Sales</h2>
+        <p>Free Real Estate Listings Website for Filipino Brokers</p>
+        <div class="register-button-in-main">
+            Register Now
+        </div>
+    </section>
 </main>
 <section id="testimonial-landing-section">
-    <p>Trusted by 5,000 Filipino Real Brokers</p>
+    <p>Trusted by 5,000+ Real Estate Brokers</p>
 </section>
 <section id="features-landing-section">
     <div class="features-one">
-        <h3>Unlimited Property Listings</h3>
-        <p>No more limit on how many properties you can post for free</p>
         <div class="feature-one-image pages-landing-image">
-            <span>Image here</span>
+            <%= image_tag "indexp1.png" %>
         </div>
+        <h3 class="features-h3">Unlimited Property Listings</h3>
+        <p>No more limit on how many properties you can post for free</p>
     </div>
     <div class="features-two">
-        <h3>Unlimited Property Listings</h3>
-        <p>No more limit on how many properties you can post for free</p>
-        <div class="feature-two-image pages-landing-image">
-            <span>Image here</span>
+        <div class="feature-one-image pages-landing-image">
+            <%= image_tag "indexp2.png" %>
         </div>
+        <h3 class="features-h3">Local Brokers Newsfeed</h3>
+        <p>Get on top of the best deals and properties from other local brokers</p>
     </div>
     <div class="features-three">
-        <h3>Unlimited Property Listings</h3>
-        <p>No more limit on how many properties you can post for free</p>
-        <div class="feature-three-image pages-landing-image">
-            <span>Image here</span>
+        <div class="feature-one-image pages-landing-image">
+            <%= image_tag "indexp3.png" %>
         </div>
+        <h3 class="features-h3">Licensed Brokers Only Members</h3>
+        <p>Talk and make deals with your fellow brokers</p>
     </div>
 </section>
 
 <section id="footer-landing-section">
-    <h2>Get your free property listings website today</h2>
-    <div class="register-button-in-footer">
-        Register Now
+    <div class="footer-item-container">
+        <h3>Get your free property listings website today</h3>
+        <div class="register-button-in-footer">
+            Register Now
+        </div>
     </div>
 </section>

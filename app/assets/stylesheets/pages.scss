@@ -1,3 +1,105 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// pages index landing page
+#site-title-h1{
+    font-size: 1.5em;
+    margin: 0;
+}
+
+nav{
+    color: #ffffff;
+    background-color: #0b0c0c;
+}
+
+.main-nav{
+    width: 720px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav-item span{
+    margin-left: 10px;
+}
+
+main{
+    width: 100%;
+}
+
+main #hero-section{
+    width: 720px;
+    margin: 0 auto;
+    height: 300px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+
+main #hero-section h2{
+    font-size: 3rem;
+}
+
+.register-button-in-main, .register-button-in-footer{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #0b0c0c;
+    color: #ffffff;
+    width: 200px;
+    text-align: center;
+}
+
+#testimonial-landing-section{
+    width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2rem;
+    background-color: #eeeeee;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#features-landing-section{
+    width: 720px;
+    margin: 0 auto;
+}
+
+.features-one, .features-two, .features-three{
+    padding: 10px;
+    border: 2px solid #eeeeee;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+}
+
+.pages-landing-image{
+    width: 100%;
+}
+.pages-landing-image img{
+    width: 100%;
+}
+
+.features-h3{
+    font-size: 1.5rem;
+}
+
+#footer-landing-section{
+    width: 100%;
+    background-color: #eeeeee;  
+    margin-top: 20px;
+}
+
+.footer-item-container{
+    width: 720px;
+    margin: 0 auto;
+    height: 200px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+
+.footer-item-container h3{
+    font-size: 1.5rem;
+}
