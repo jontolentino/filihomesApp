@@ -1,18 +1,11 @@
-<nav>
-    <div class="main-nav">
-        <h1 id="site-title-h1">FILIHOMES</h1>
-        <div class="main-nav-item">
-            <span>Register</span>
-            <span>Login</span>
-        </div>
-    </div>
-</nav>
+<%= render "menu" %>
+
 <main>
     <section id="hero-section">
         <h2>More Inquiries, More Sales</h2>
         <p>Free Real Estate Listings Website for Filipino Brokers</p>
         <div class="register-button-in-main">
-            Register Now
+            <%= link_to "Register Now", registrations_new_path() %>
         </div>
     </section>
 </main>
@@ -47,7 +40,7 @@
     <div class="footer-item-container">
         <h3>Get your free property listings website today</h3>
         <div class="register-button-in-footer">
-            Register Now
+            <%= link_to "Register Now", registrations_new_path() %>
         </div>
     </div>
 </section>
