@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # session routes / login
   get '/sign_in' => 'sessions#new', as: 'sessions_new_login'
-  post '/sign_in' => 'sessions#create', as: 'sessions_create_log_in'
+  post '/sign_in' => 'sessions#create', as: 'sessions_create_login'
   delete '/logout' => 'sessions#destroy'
 
   # edit password routes

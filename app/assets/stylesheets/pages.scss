@@ -114,12 +114,12 @@ a{
     margin: 0 auto;
 }
 
-#register-now-h1{
+#register-now-h1, #login-now-h1{
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.sign-up-forms{
+.sign-up-forms, .login-sessions-forms{
     width: 100%;
     font-family: 'Work Sans';
     padding: 8px;
@@ -133,7 +133,7 @@ select{
     margin-bottom: 4px;
 }
 
-.sign-up-forms-button{
+.sign-up-forms-button, .login-sessions-forms-button{
     padding: 8px;
     text-align: center;
     width: 20%;

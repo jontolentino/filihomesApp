@@ -21,7 +21,7 @@
     </p>
     <p>
     <%= f.label 'birthdate' %><br>
-    <%= f.date_select :birthday_date, order: [:month, :day, :year] %>
+    <%= f.date_select :birthday_date, order: [:month, :day, :year], start_year: 1901 %>
     </p>
     <p>
     <%= f.submit 'Sign Up', class: "sign-up-forms-button" %>

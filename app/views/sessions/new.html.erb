@@ -1,0 +1,17 @@
+<%= render "pages/menu" %>
+<div class="register-form-container">
+    <h1 id="login-now-h1">Login to you account</h1>
+    <%= form_with url: sessions_create_login_path() do |f| %>
+    <p>
+    <%= f.label 'email' %><br>
+    <%= f.email_field :email, class: "login-sessions-forms" %>
+    </p>
+    <p>
+    <%= f.label 'password' %><br>
+    <%= f.password_field :password, class: "login-sessions-forms" %>
+    </p>
+    <p>
+    <%= f.submit 'Login', class: "login-sessions-forms-button" %>
+    </p>
+  <% end %>
+</div>
