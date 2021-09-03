@@ -1,22 +1,30 @@
 <%= render "pages/menu" %>
 
 <div class="register-form-container">
-    <h1>Register Now</h1>
-    <%= form_with model: @user, url: registrations_create_path() do |f| %>
+    <h1 id="register-now-h1">Register Now</h1>
+    <%= form_with model: @user, url: registrations_create_path(), scope: "user" do |f| %>
     <p>
     <%= f.label 'email' %><br>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, class: "sign-up-forms" %>
     </p>
     <p>
     <%= f.label 'password' %><br>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, class: "sign-up-forms" %>
     </p>
     <p>
     <%= f.label 'password_confirmation' %><br>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "sign-up-forms" %>
     </p>
     <p>
-    <%= f.submit 'Sign Up' %>
+    <%= f.label "prc id" %><br>
+    <%= f.text_field :prc_id, class: "sign-up-forms" %>
+    </p>
+    <p>
+    <%= f.label 'birthdate' %><br>
+    <%= f.date_select :birthday_date, order: [:month, :day, :year] %>
+    </p>
+    <p>
+    <%= f.submit 'Sign Up', class: "sign-up-forms-button" %>
     </p>
   <% end %>
 </div>
