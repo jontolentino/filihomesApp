@@ -7,11 +7,11 @@ Rails.application.routes.draw do
 
   # registration routes
   get '/sign_up' => 'registrations#new', as: 'registrations_new'
-  get '/sign_up' => 'registrations#create', as: 'registrations_create'
+  post '/sign_up' => 'registrations#create', as: 'registrations_create'
 
   # session routes / login
   get '/sign_in' => 'sessions#new', as: 'sessions_new_login'
-  post '/sign_in' => 'sessions#create', as: 'sessions_create_log_in'
+  post '/sign_in' => 'sessions#create', as: 'sessions_create_login'
   delete '/logout' => 'sessions#destroy'
 
   # edit password routes

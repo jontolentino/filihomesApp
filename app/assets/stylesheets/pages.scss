@@ -103,3 +103,40 @@ main #hero-section h2{
 .footer-item-container h3{
     font-size: 1.5rem;
 }
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.register-form-container{
+    width: 720px;
+    margin: 0 auto;
+}
+
+#register-now-h1, #login-now-h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sign-up-forms, .login-sessions-forms{
+    width: 100%;
+    font-family: 'Work Sans';
+    padding: 8px;
+    margin-bottom: 4px;
+}
+
+select{
+    width: 20%;
+    font-family: 'Work Sans';
+    padding: 8px;
+    margin-bottom: 4px;
+}
+
+.sign-up-forms-button, .login-sessions-forms-button{
+    padding: 8px;
+    text-align: center;
+    width: 20%;
+    font-family: 'Work Sans';
+    margin-top: 10px;
+}
