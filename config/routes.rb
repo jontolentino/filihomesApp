@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   get '/password' => 'passwords#edit', as: 'edit_password'
   patch '/password' =>'passwords#update'
 
-  
+  # app my listings
+  get '/:id' => 'my_property_listings#my_listing', as: 'my_listing_path'
 
 
 

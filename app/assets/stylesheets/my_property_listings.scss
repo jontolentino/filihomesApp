@@ -1,0 +1,58 @@
+#app-nav{
+    color: #ffffff;
+    background-color: #243ab8;
+}
+
+.app-main-nav{
+    width: 720px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-main-nav-item span{
+    margin-left: 10px;
+}
+
+.my-property-listings-container{
+    width: 720px;
+    margin: 0 auto;
+}
+
+.public-profile-container{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.public-profile-image-c{
+    width: 40px;
+    height: 40px;
+    background-color: #eeeeee;
+}
+
+.my-property-listings-inside-h1{
+    font-size: 1.7rem;
+    margin: 0 10px;
+}
+
+.the-listings-inside-container{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.the-listing-image-container{
+    width: 300px;
+    height: 200px;
+    background-color: #eeeeee;
+    margin-right: 10px;
+}
+
+.the-listings-meta-container{
+    padding-top: 10px;
+}
