@@ -4,6 +4,10 @@ class MyPropertyListingsController < ApplicationController
         @my_listings = MyPropertyListing.all.reverse_order
     end
 
+    def show_listing
+        
+    end
+
     def create_listing
     end
 
