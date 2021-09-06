@@ -35,4 +35,10 @@
     padding: 15px;
     padding-bottom: 25px;
     background-color: #eeeeee;
+    border: 2px solid #eeeeee;
+    border-radius: 3px;
+}
+
+.status-content-container:hover{
+    border: 2px solid #243ab8;
 }
