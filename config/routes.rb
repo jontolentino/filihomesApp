@@ -23,8 +23,8 @@ Rails.application.routes.draw do
   get 'u/:id/prop/:id' => 'my_property_listings#show_listing', as: 'show_listing'
 
   # app my status
-  get 'u/:id/status' => 'status#index', as: 'my_statux_index'
-  get 'u/:id/status/:id' => 'status#show', as: 'my_statux_show'
+  get 'u/:id/status' => 'status#index', as: 'status_index'
+  get 'u/:id/status/:id' => 'status#show', as: 'status_show'
 
 
 
