@@ -1,0 +1,2 @@
+class MyPropertyListing < ApplicationRecord
+end

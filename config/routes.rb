@@ -18,6 +18,13 @@ Rails.application.routes.draw do
   get '/password' => 'passwords#edit', as: 'edit_password'
   patch '/password' =>'passwords#update'
 
+  # app my listings
+  get 'u/:id' => 'my_property_listings#my_listing', as: 'my_listing'
+  get 'u/:id/prop/:id' => 'my_property_listings#show_listing', as: 'show_listing'
+
+  # app my status
+  get 'u/:id/status' => 'status#index', as: 'status_index'
+  get 'u/:id/status/:id' => 'status#show', as: 'status_show'
 
 
 

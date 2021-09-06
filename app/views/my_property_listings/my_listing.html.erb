@@ -1,0 +1,29 @@
+<%= render "main_app_layout/appmenu" %>
+
+<div class="my-property-listings-container">
+    <div class="public-profile-container">
+        <div class="public-profile-image-c">
+        <span>PP</span>
+        </div>
+        <h1 class="my-property-listings-inside-h1">Jon Tolentino Property Listings</h1>
+        <span>Create Listings</span>
+    </div>
+    
+    <div class="the-listings-container">
+        <% @my_listings.each do |item| %>
+        <div class="the-listings-inside-container">
+            <div class="the-listing-image-container">
+                <span>Property Image here</span>
+            </div>
+            <div class="the-listings-meta-container">
+                <p><strong><%= item.title %></strong></p>
+                <p>Lot area: <%= item.lot_area %> sqm</p>
+                <p>Floor area: <%= item.floor_area %> sqm</p>
+            </div>
+            
+        </div>
+            
+        <% end %>
+    </div>
+    
+</div>
