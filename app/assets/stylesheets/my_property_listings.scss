@@ -45,10 +45,12 @@
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
+    border: 2px solid #ffffff;
 }
 
 .the-listings-inside-container:hover{
     background-color: #f7f8ff;
+    border: 2px solid #243ab8;
 }
 
 .the-listing-image-container{
