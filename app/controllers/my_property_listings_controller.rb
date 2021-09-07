@@ -5,7 +5,7 @@ class MyPropertyListingsController < ApplicationController
     end
 
     def show_listing
-        
+        @listing = MyPropertyListing.find_by(id: params[:prop_id])
     end
 
     def new_listing

@@ -1,32 +1,35 @@
 <%= render "main_app_layout/appmenu" %>
 <div class="show-listing-container">
     
-    <h1 id="show-listing-h1">Kayla Model - Amiya Rosa Lipa City, 3br/2bath</h1>
+    <h1 id="show-listing-h1"><%= @listing.title %></h1>
     <p id="show-listing-by-p">Listing by: <strong>Jon Tolentino</strong></p>
     <div class="show-listing-image-container">
-        <span>Image or images here</span>
+        
+        <% if @listing.property_image.present? %>
+                <%= image_tag @listing.property_image, class: "property-image-tag-show" %>
+        <% end %>
     </div>
     <div class="show-listing-info-container">
         <div class="show-listing-info-card">
-            <p>Location: Lipa City, Batangas</p>
+            <p>Location: <strong><%= @listing.location_name %></strong></p>
         </div>
         <div class="show-listing-info-card">
-            <p>Lot Area: 100sqm</p>
+            <p>Lot Area (sqm): <strong><%= @listing.lot_area %></strong></p>
         </div>
         <div class="show-listing-info-card">
-            <p>Floor Area: 130sqm</p>
+            <p>Floor Area (sqm): <strong><%= @listing.floor_area %></strong></p>
         </div>
         <div class="show-listing-info-card">
-            <p>Bedroom: Provision for 3 bedrooms</p>
+            <p>Bedroom: <strong><%= @listing.bedroom_count %></strong></p>
         </div>
         <div class="show-listing-info-card">
-            <p>Bathroom: 1 bathroom</p>
+            <p>Bathroom: <strong><%= @listing.bathroom_count %></strong></p>
         </div>
         <div class="show-listing-info-card">
-            <p>House type: Duplex</p>
+            <p>House type: Duplex **</p>
         </div>
         <div class="show-listing-info-card">
-            <p>Details: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo doloremque, illum porro placeat qui ab commodi omnis ullam facilis aliquam!</p>
+            <p>Details: <strong><%= @listing.details %></strong></p>
         </div>
     </div>
 </div>
