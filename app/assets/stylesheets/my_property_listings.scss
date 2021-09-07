@@ -60,6 +60,13 @@
     margin-right: 10px;
 }
 
+.property-image-tag{
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
+
+}
+
 .the-listings-meta-container{
     padding-top: 10px;
 }
@@ -99,4 +106,10 @@
 
 .show-listing-info-card:hover{
     background-color: #f7f8ff;
+}
+
+.property-image-tag{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
 }
