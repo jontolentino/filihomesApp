@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
     def destroy
         # deletes user session
+        redirect_to my_listing_path(id: session[:user_id]), notice: 'Logged Out'
         session[:user_id] = nil
-        redirect_to root_path, notice: 'Logged Out'
     end
   end
