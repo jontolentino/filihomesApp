@@ -6,7 +6,7 @@
         <div class="public-profile-image-c">
         <span>PP</span>
         </div>
-        <h1 class="my-property-listings-inside-h1">Jon Tolentino Property Listings</h1>
+        <h1 class="my-property-listings-inside-h1"><%= @user.name %> Property Listings</h1>
         <% if Current.user %>
         <span id="create-listing-span-link"><%= link_to "Create Listings", new_listing_path(id: params[:id])%></span>
         <% end %>

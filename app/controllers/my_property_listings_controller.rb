@@ -2,6 +2,7 @@ class MyPropertyListingsController < ApplicationController
     
     def my_listing
         @my_listings = MyPropertyListing.all.reverse_order()
+        @user = User.find_by(id: params[:id])
     end
 
     def show_listing
