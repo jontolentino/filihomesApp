@@ -14,13 +14,14 @@ class MyPropertyListingsController < ApplicationController
     end
 
     def create_listing
-        @listing = MyPropertyListing.new(new_listing_params)
+        @listing = Current.user.my_property_listings.build(new_listing_params)
 
         if @listing.save
             flash[:notice] = "Success: Created a new listing"
-            redirect_to my_listing_path(id: 1)
+            redirect_to my_listing_path(id: session[:user_id])
         else
-            render new_listing
+            flash[:notice] = "Failed"
+            redirect_to new_listing_path(id: session[:user_id])
         end
     end
 
