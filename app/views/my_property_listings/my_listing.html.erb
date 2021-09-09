@@ -14,21 +14,22 @@
     
     <div class="the-listings-container">
         <% @my_listings.each do |item| %>
-        <div class="the-listings-inside-container">
-            <div class="the-listing-image-container">
-            <% if item.property_image.present? %>
-                <%= image_tag item.property_image, class: "property-image-tag" %>
-            <% end %>
+                <%= link_to show_listing_path(id: params[:id], prop_id: item.id) do %> 
+                <div class="the-listings-inside-container">
+                    <div class="the-listing-image-container">
+                    <% if item.property_image.present? %>
+                        <%= image_tag item.property_image, class: "property-image-tag" %>
+                    <% end %>
 
-            </div>
-            <div class="the-listings-meta-container">
-                <p><strong><%= item.title %></strong></p>
-                <p>Lot area: <%= item.lot_area %> sqm</p>
-                <p>Floor area: <%= item.floor_area %> sqm</p>
-            </div>
-            
-        </div>
-            
+                    </div>
+                    <div class="the-listings-meta-container">
+                        <p><strong><%= item.title %></strong></p>
+                        <p>Lot area: <%= item.lot_area %> sqm</p>
+                        <p>Floor area: <%= item.floor_area %> sqm</p>
+                    </div>
+                    
+                </div>
+                <% end %>
         <% end %>
     </div>
     

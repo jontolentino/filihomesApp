@@ -1,12 +1,12 @@
 class MyPropertyListingsController < ApplicationController
     
     def my_listing
-        @my_listings = MyPropertyListing.where(user_id: params[:id])
+        @my_listings = MyPropertyListing.where(user_id: params[:id]).reverse_order
         @user = User.find_by(id: params[:id])
     end
 
     def show_listing
-        @listing = MyPropertyListing.find_by(id: params[:prop_id])
+        @listing = MyPropertyListing.where(user_id: params[:id], id: params[:prop_id])
     end
 
     def new_listing

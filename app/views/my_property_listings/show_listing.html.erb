@@ -1,36 +1,37 @@
 <%= render "main_app_layout/notices_main" %>
 <%= render "main_app_layout/appmenu" %>
 <div class="show-listing-container">
-    
-    <h1 id="show-listing-h1"><%= @listing.title %></h1>
+    <% @listing.each do |item| %>
+    <h1 id="show-listing-h1"><%= item.title %></h1>
     <p id="show-listing-by-p">Listing by: <strong>Jon Tolentino</strong></p>
     <div class="show-listing-image-container">
         
-        <% if @listing.property_image.present? %>
-                <%= image_tag @listing.property_image, class: "property-image-tag-show" %>
+        <% if item.property_image.present? %>
+                <%= image_tag item.property_image, class: "property-image-tag-show" %>
         <% end %>
     </div>
     <div class="show-listing-info-container">
         <div class="show-listing-info-card">
-            <p>Location: <strong><%= @listing.location_name %></strong></p>
+            <p>Location: <strong><%= item.location_name %></strong></p>
         </div>
         <div class="show-listing-info-card">
-            <p>Lot Area (sqm): <strong><%= @listing.lot_area %></strong></p>
+            <p>Lot Area (sqm): <strong><%= item.lot_area %></strong></p>
         </div>
         <div class="show-listing-info-card">
-            <p>Floor Area (sqm): <strong><%= @listing.floor_area %></strong></p>
+            <p>Floor Area (sqm): <strong><%= item.floor_area %></strong></p>
         </div>
         <div class="show-listing-info-card">
-            <p>Bedroom: <strong><%= @listing.bedroom_count %></strong></p>
+            <p>Bedroom: <strong><%= item.bedroom_count %></strong></p>
         </div>
         <div class="show-listing-info-card">
-            <p>Bathroom: <strong><%= @listing.bathroom_count %></strong></p>
+            <p>Bathroom: <strong><%= item.bathroom_count %></strong></p>
         </div>
         <div class="show-listing-info-card">
             <p>House type: Duplex **</p>
         </div>
         <div class="show-listing-info-card">
-            <p>Details: <strong><%= @listing.details %></strong></p>
+            <p>Details: <strong><%= item.details %></strong></p>
         </div>
     </div>
+    <% end %>
 </div>
