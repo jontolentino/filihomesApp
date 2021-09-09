@@ -7,8 +7,12 @@
         <span>PP</span>
         </div>
         <h1 class="my-property-listings-inside-h1"><%= @user.name %> Property Listings</h1>
-        <% if Current.user %>
-        <span id="create-listing-span-link"><%= link_to "Create Listings", new_listing_path(id: params[:id])%></span>
+        <% if Current.user.present? %>
+        <% if Current.user.id == @user.id   %>
+            <span id="create-listing-span-link"><%= link_to "Create Listings", new_listing_path(id: params[:id])%></span>
+        <% else %>
+        
+        <% end %>
         <% end %>
     </div>
     
