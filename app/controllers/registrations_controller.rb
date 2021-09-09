@@ -19,7 +19,7 @@ class RegistrationsController < ApplicationController
 
     def user_params
         # strong parameters
-        params.require(:user).permit(:email, :password, :password_confirmation, :birthday_date, :prc_id)
+        params.require(:user).permit(:email, :password, :password_confirmation, :birthday_date, :prc_id, :name)
     end
 
 end

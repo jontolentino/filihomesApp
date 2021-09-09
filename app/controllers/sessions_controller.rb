@@ -10,16 +10,16 @@ class SessionsController < ApplicationController
         if user.present? && user.authenticate(params[:password])
             # sets up user.id sessions
             session[:user_id] = user.id
-            redirect_to root_path, notice: 'Logged in successfully'
+            redirect_to my_listing_path(id: session[:user_id]), notice: 'Logged in successfully'
         else
-            flash.now[:alert] = 'Invalid email or password'
-            render :new
+            # render :new
+            redirect_to sessions_new_login_path, notice: 'Invalid email or password'
         end
     end
 
     def destroy
         # deletes user session
+        redirect_to my_listing_path(id: session[:user_id]), notice: 'Logged Out'
         session[:user_id] = nil
-        redirect_to root_path, notice: 'Logged Out'
     end
   end

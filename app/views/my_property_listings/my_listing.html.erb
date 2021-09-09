@@ -1,3 +1,4 @@
+<%= render "main_app_layout/notices_main" %>
 <%= render "main_app_layout/appmenu" %>
 
 <div class="my-property-listings-container">
@@ -5,24 +6,30 @@
         <div class="public-profile-image-c">
         <span>PP</span>
         </div>
-        <h1 class="my-property-listings-inside-h1">Jon Tolentino Property Listings</h1>
-        <span>Create Listings</span>
+        <h1 class="my-property-listings-inside-h1"><%= @user.name %> Property Listings</h1>
+        <% if Current.user %>
+        <span id="create-listing-span-link"><%= link_to "Create Listings", new_listing_path(id: params[:id])%></span>
+        <% end %>
     </div>
     
     <div class="the-listings-container">
         <% @my_listings.each do |item| %>
-        <div class="the-listings-inside-container">
-            <div class="the-listing-image-container">
-                <span>Property Image here</span>
-            </div>
-            <div class="the-listings-meta-container">
-                <p><strong><%= item.title %></strong></p>
-                <p>Lot area: <%= item.lot_area %> sqm</p>
-                <p>Floor area: <%= item.floor_area %> sqm</p>
-            </div>
-            
-        </div>
-            
+                <%= link_to show_listing_path(id: params[:id], prop_id: item.id) do %> 
+                <div class="the-listings-inside-container">
+                    <div class="the-listing-image-container">
+                    <% if item.property_image.present? %>
+                        <%= image_tag item.property_image, class: "property-image-tag" %>
+                    <% end %>
+
+                    </div>
+                    <div class="the-listings-meta-container">
+                        <p><strong><%= item.title %></strong></p>
+                        <p>Lot area: <%= item.lot_area %> sqm</p>
+                        <p>Floor area: <%= item.floor_area %> sqm</p>
+                    </div>
+                    
+                </div>
+                <% end %>
         <% end %>
     </div>
     

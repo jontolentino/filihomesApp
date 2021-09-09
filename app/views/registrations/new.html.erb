@@ -1,8 +1,13 @@
+<%= render "pages/notices" %>
 <%= render "pages/menu" %>
 
 <div class="register-form-container">
     <h1 id="register-now-h1">Register Now</h1>
     <%= form_with model: @user, url: registrations_create_path(), scope: "user" do |f| %>
+    <p>
+    <%= f.label 'name' %><br>
+    <%= f.text_field :name, class: "sign-up-forms" %>
+    </p>
     <p>
     <%= f.label 'email' %><br>
     <%= f.email_field :email, class: "sign-up-forms" %>

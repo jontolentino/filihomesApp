@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # session routes / login
   get '/sign_in' => 'sessions#new', as: 'sessions_new_login'
   post '/sign_in' => 'sessions#create', as: 'sessions_create_login'
-  delete '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy', as: 'session_destroy'
 
   # edit password routes
   get '/password' => 'passwords#edit', as: 'edit_password'
@@ -20,11 +20,13 @@ Rails.application.routes.draw do
 
   # app my listings
   get 'u/:id' => 'my_property_listings#my_listing', as: 'my_listing'
-  get 'u/:id/prop/:id' => 'my_property_listings#show_listing', as: 'show_listing'
+  get 'u/:id/prop/:prop_id' => 'my_property_listings#show_listing', as: 'show_listing'
+  get 'u/:id/new-listing' => 'my_property_listings#new_listing', as: 'new_listing'
+  post 'create/listing' => 'my_property_listings#create_listing', as: 'create_listing'
 
   # app my status
   get 'u/:id/status' => 'status#index', as: 'status_index'
-  get 'u/:id/status/:id' => 'status#show', as: 'status_show'
+  get 'u/:id/status/:status_id' => 'status#show', as: 'status_show'
 
 
 
