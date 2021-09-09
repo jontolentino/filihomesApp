@@ -6,7 +6,7 @@
 <% if @my_listing.property_image.present? %>
     <%= image_tag @my_listing.property_image, class: "property-image-tag-show" %>
 <% end %>
-<%= form_with model: @my_listing, url: patch_listing_path(), scope: "my_listing", method: :patch do |f| %>
+<%= form_with model: @my_listing, url: patch_listing_path(id: @my_listing.user_id, props_id: @my_listing.id), scope: "my_listing", method: :patch do |f| %>
     <p>
     <%= f.label 'title' %><br>
     <%= f.text_field :title, class: "create-listing-forms" %>
