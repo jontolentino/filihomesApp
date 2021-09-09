@@ -43,9 +43,15 @@ class MyPropertyListingsController < ApplicationController
 
     def patch_listing
         @my_listing = MyPropertyListing.find_by(user_id: params[:id], id: params[:prop_id])
-        @my_listing.update(new_listing_params)
-        flash[:notice] = "Listing updated"
-        redirect_to show_listing_path()
+        
+        if Current.user.id != @my_listing.user_id
+            flash[:notice] = "You cannot edit this listing"
+            redirect_to show_listing_path()
+        else 
+            @my_listing.update(new_listing_params)
+            flash[:notice] = "Listing updated"
+            redirect_to show_listing_path()
+        end
     end
 
     private

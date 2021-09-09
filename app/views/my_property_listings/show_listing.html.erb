@@ -30,16 +30,20 @@
             <p>House type: Duplex **</p>
         </div>
         <div class="show-listing-info-card">
-            <p>Details: <strong><%= item.details %></strong></p>
+            <p class="show-listing-details-p">Details: <strong><%= item.details %></strong></p>
         </div>
     </div>
-    <% if Current.user %>
-    <div class="delete-button-for-show">
-        <%= link_to "Delete this listing", delete_listing_path(id: params[:id], prop_id: item.id), method: :delete, data: {confirm: "Are you sure?"} %>
-    </div>
-    <div class="edit-button-for-show">
-        <%= link_to "Edit this listing", edit_listing_path(id: params[:id], prop_id: item.id) %>
-    </div>
+    <% if Current.user.present? %>
+        <% if Current.user.id != item.user_id  %>
+
+        <% else %>
+        <div class="delete-button-for-show">
+            <%= link_to "Delete this listing", delete_listing_path(id: params[:id], prop_id: item.id), method: :delete, data: {confirm: "Are you sure?"} %>
+        </div>
+        <div class="edit-button-for-show">
+            <%= link_to "Edit this listing", edit_listing_path(id: params[:id], prop_id: item.id) %>
+        </div>
+        <% end %>
     <% end %>
     <% end %>
     
