@@ -19,10 +19,14 @@ Rails.application.routes.draw do
   patch '/password' =>'passwords#update'
 
   # app my listings
-  get 'u/:id' => 'my_property_listings#my_listing', as: 'my_listing'
-  get 'u/:id/prop/:prop_id' => 'my_property_listings#show_listing', as: 'show_listing'
-  get 'u/:id/new-listing' => 'my_property_listings#new_listing', as: 'new_listing'
-  post 'create/listing' => 'my_property_listings#create_listing', as: 'create_listing'
+  get '/u/:id' => 'my_property_listings#my_listing', as: 'my_listing'
+  get '/u/:id/prop/:prop_id' => 'my_property_listings#show_listing', as: 'show_listing'
+  get '/u/:id/new-listing' => 'my_property_listings#new_listing', as: 'new_listing'
+  post '/create/listing' => 'my_property_listings#create_listing', as: 'create_listing'
+  delete '/u/:id/prop/:prop_id' => 'my_property_listings#delete_listing', as: 'delete_listing'
+  get '/u/:id/prop/:prop_id/edit' => 'my_property_listings#edit_listing', as: 'edit_listing'
+  patch '/u/:id/prop/:prop_id' => 'my_property_listings#patch_listing', as: 'patch_listing'
+
 
   # app my status
   get 'u/:id/status' => 'status#index', as: 'status_index'

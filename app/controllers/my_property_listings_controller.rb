@@ -26,6 +26,26 @@ class MyPropertyListingsController < ApplicationController
     end
 
     def delete_listing
+        @property = MyPropertyListing.find_by(user_id: params[:id], id: params[:prop_id])
+
+        if @property.destroy
+            flash[:notice] = "You deleted a listing."
+            redirect_to my_listing_path(id: params[:id])
+        else
+            render show_listing
+            flash[:notice] = "Could not be deleted."
+        end
+    end
+
+    def edit_listing
+        @my_listing = MyPropertyListing.find_by(user_id: params[:id], id: params[:prop_id])
+    end
+
+    def patch_listing
+        @my_listing = MyPropertyListing.find_by(user_id: params[:id], id: params[:prop_id])
+        @my_listing.update(new_listing_params)
+        flash[:notice] = "Listing updated"
+        redirect_to show_listing_path()
     end
 
     private

@@ -1,11 +1,12 @@
 <%= render "main_app_layout/notices_main" %>
 <%= render "main_app_layout/appmenu" %>
 
-<div class="my-property-listings-container">
-
-    <h1 id="create-new-listing-h1">Create new listing</h1>
-
-    <%= form_with model: @my_listing, url: create_listing_path(), scope: "my_listing" do |f| %>
+<div class="edit-listing-container">
+<h1>Edit this listing</h1>
+<% if @my_listing.property_image.present? %>
+    <%= image_tag @my_listing.property_image, class: "property-image-tag-show" %>
+<% end %>
+<%= form_with model: @my_listing, url: patch_listing_path(), scope: "my_listing", method: :patch do |f| %>
     <p>
     <%= f.label 'title' %><br>
     <%= f.text_field :title, class: "create-listing-forms" %>
@@ -39,7 +40,7 @@
     <%= f.file_field :property_image, class: "create-listing-forms" %>
     </p>
     <p>
-    <%= f.submit 'Create Listing', class: "create-listing-forms-button" %>
+    <%= f.submit 'Update Listing', class: "create-listing-forms-button" %>
     </p>
   <% end %>
 </div>

@@ -1,6 +1,10 @@
 <nav id="app-nav">
     <div class="app-main-nav">
+        <% if Current.user %>
+        <h1 id="app-site-title-h1"><%= link_to "FILIHOMES", my_listing_path(id: session[:user_id]) %></h1>
+        <% else %>
         <h1 id="app-site-title-h1"><%= link_to "FILIHOMES", root_path() %></h1>
+        <% end %>
         <div class="app-main-nav-item">
             <% if Current.user %>
                 <span><%= link_to "Listings", my_listing_path(id: session[:user_id]) %></span>

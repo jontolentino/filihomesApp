@@ -127,3 +127,36 @@
 #create-listing-span-link a{
     color: #0b0c0c;
 }
+
+.delete-button-for-show{
+    text-align: center;
+    padding: 10px;
+    background-color: #d10000;
+}
+
+.delete-button-for-show a{
+    color: #ffffff;
+}
+
+.edit-listing-container{
+    width: 720px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+.edit-listing-container h1{
+    font-size: 1.6rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.edit-button-for-show a{
+    color: #0b0c0c;
+}
+
+.edit-button-for-show{
+    text-align: center;
+    padding: 10px;
+    background-color: #eeea00;
+    margin-top: 6px;
+}
