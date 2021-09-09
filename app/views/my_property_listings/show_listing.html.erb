@@ -3,7 +3,7 @@
 <div class="show-listing-container">
     <% @listing.each do |item| %>
     <h1 id="show-listing-h1"><%= item.title %></h1>
-    <p id="show-listing-by-p">Listing by: <strong>Jon Tolentino</strong></p>
+    <p id="show-listing-by-p">Listing by: <strong><%= item.user.name %></strong></p>
     <div class="show-listing-image-container">
         
         <% if item.property_image.present? %>
