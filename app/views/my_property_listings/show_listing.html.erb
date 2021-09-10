@@ -39,6 +39,14 @@
             <p class="show-listing-details-p">Details: <strong><%= item.details %></strong></p>
         </div>
     </div>
+    <% if @loc_coded.present? %>
+    <p>Maps</p>
+    <p>
+        <img src="https://www.mapquestapi.com/staticmap/v5/map?key=tyDHRorpsXS8bASLpcSf1NG5VpPgJJ6u&locations=<%=@loc_coded[0]%>,<%=@loc_coded[1]%>|marker-red&size=720,480&zoom=14" alt="">
+    </p>
+    <% else %>
+    <p>Maps can't load properly because of the location.</p>
+    <% end %>
     <% if Current.user.present? %>
         <% if Current.user.id != item.user_id  %>
 
@@ -79,5 +87,13 @@
                 <%= f.submit 'Inquire', class: "create-listing-forms-button" %>
             </p>
         <% end %>  
-    <% end %>  
+    <% end %> 
+
+    
+
+    
+    
+    
+
+    
 </div>
