@@ -11,6 +11,14 @@
     <%= f.text_field :title, class: "create-listing-forms" %>
     </p>
     <p>
+    <%= f.label 'price(₱)' %><br>
+    <%= f.text_field :price, class: "create-listing-forms" %>
+    </p>
+    <p>
+    <%= f.label 'area' %><br>
+    <%= f.select :area, [["Batangas"], ["Cavite"], ["Laguna"], ["Tagaytay"]], class: "create-listing-forms" %>
+    </p>
+    <p>
     <%= f.label 'location' %><br>
     <%= f.text_field :location_name, class: "create-listing-forms" %>
     </p>

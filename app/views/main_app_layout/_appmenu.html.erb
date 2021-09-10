@@ -14,8 +14,8 @@
                 <span>Settings</span>
                 <span><%= link_to 'Logout', session_destroy_path(), method: 'delete'%></span>
             <% else %>
-                <span><%= link_to "Register", registrations_new_path() %></span>
-                <span><%= link_to "Login", sessions_new_login_path() %></span>
+                <span><%= link_to "Broker Register", registrations_new_path() %></span>
+                <span><%= link_to "Broker Login", sessions_new_login_path() %></span>
             <% end %>
         </div>
     </div>

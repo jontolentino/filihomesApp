@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_125920) do
+ActiveRecord::Schema.define(version: 2021_09_10_013712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,18 @@ ActiveRecord::Schema.define(version: 2021_09_07_125920) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "inquirs", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "number"
+    t.string "message"
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "my_property_listing_id"
+    t.index ["my_property_listing_id"], name: "index_inquirs_on_my_property_listing_id"
+  end
+
   create_table "my_property_listings", force: :cascade do |t|
     t.string "title"
     t.string "lot_area"
@@ -57,6 +69,8 @@ ActiveRecord::Schema.define(version: 2021_09_07_125920) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.string "area"
+    t.string "price"
     t.index ["user_id"], name: "index_my_property_listings_on_user_id"
   end
 
@@ -79,5 +93,6 @@ ActiveRecord::Schema.define(version: 2021_09_07_125920) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "inquirs", "my_property_listings"
   add_foreign_key "my_property_listings", "users"
 end

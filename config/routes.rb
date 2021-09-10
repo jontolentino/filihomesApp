@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   patch '/u/:id/prop/:prop_id' => 'my_property_listings#patch_listing', as: 'patch_listing'
 
 
+  get '/u/:id/inquirs' => 'inquirs#index', as: 'inquirs_index'
+
   # app my status
   get 'u/:id/status' => 'status#index', as: 'status_index'
   get 'u/:id/status/:status_id' => 'status#show', as: 'status_show'

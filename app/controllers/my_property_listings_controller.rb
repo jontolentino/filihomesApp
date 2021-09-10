@@ -84,7 +84,7 @@ class MyPropertyListingsController < ApplicationController
     private
 
     def new_listing_params
-        params.require(:my_listing).permit(:title, :location_name, :lot_area, :floor_area, :bedroom_count, :bathroom_count, :details, :property_image)
+        params.require(:my_listing).permit(:title, :location_name, :lot_area, :floor_area, :bedroom_count, :bathroom_count, :details, :property_image, :area, :price)
     end
 
     def check_if_valid_user
