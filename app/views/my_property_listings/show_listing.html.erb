@@ -54,27 +54,31 @@
     <% end %>
     <br>
     <br>
-    <h2>Inquire Now</h2><br>
-    <%= form_with model: @inquir, url: listing_inquirs_create_path(id: params[:id], prop_id: params[:prop_id]), scope: "inquir", method: :post do |f| %>
-        <p>
-            <%= f.label 'Name' %><br>
-            <%= f.text_field :name, class: "create-listing-forms" %>
-        </p>
-        <p>
-            <%= f.label 'Email' %><br>
-            <%= f.text_field :email, class: "create-listing-forms" %>
-        </p>
-        <p>
-            <%= f.label 'Contact Number' %><br>
-            <%= f.text_field :number, class: "create-listing-forms" %>
-        </p>
-        <p>
-            <%= f.label 'Message' %><br>
-            <%= f.text_area :message, rows: 5, class: "create-listing-forms" %>
-        </p>
-        <p>
-            <%= f.submit 'Inquire', class: "create-listing-forms-button" %>
-        </p>
-        
-    <% end %>    
+    <% if Current.user.present? && Current.user.id.to_s == params[:id] %>
+        <h1>CAN SEE HERE</h1>
+    <% else %>
+
+        <h2>Inquire Now</h2><br>
+        <%= form_with model: @inquir, url: listing_inquirs_create_path(id: params[:id], prop_id: params[:prop_id]), scope: "inquir", method: :post do |f| %>
+            <p>
+                <%= f.label 'Name' %><br>
+                <%= f.text_field :name, class: "create-listing-forms" %>
+            </p>
+            <p>
+                <%= f.label 'Email' %><br>
+                <%= f.text_field :email, class: "create-listing-forms" %>
+            </p>
+            <p>
+                <%= f.label 'Contact Number' %><br>
+                <%= f.text_field :number, class: "create-listing-forms" %>
+            </p>
+            <p>
+                <%= f.label 'Message' %><br>
+                <%= f.text_area :message, rows: 5, class: "create-listing-forms" %>
+            </p>
+            <p>
+                <%= f.submit 'Inquire', class: "create-listing-forms-button" %>
+            </p>
+        <% end %>  
+    <% end %>  
 </div>
