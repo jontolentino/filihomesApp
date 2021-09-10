@@ -12,8 +12,8 @@ class ListingInquirsController < ApplicationController
             flash[:notice] = "Success: You submitted and inquiry."
             redirect_to my_listing_path(id: params[:id])
         else
-            flash[:notice] = "Failed"
-            redirect_to show_listing_path(id: session[:user_id], prop_id: params[:prop_id])
+            flash[:notice] = "Failed: Please fill out the form properly"
+            redirect_to show_listing_path(id: params[:id], prop_id: params[:prop_id])
         end
 
     end
