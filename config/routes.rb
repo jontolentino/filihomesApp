@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
 
   get '/u/:id/inquirs' => 'inquirs#index', as: 'inquirs_index'
+  # show listing inquirs
+  post '/u/:id/prop/:prop_id/inquirs' => 'listing_inquirs#create', as: 'listing_inquirs_create'
 
   # app my status
   get 'u/:id/status' => 'status#index', as: 'status_index'

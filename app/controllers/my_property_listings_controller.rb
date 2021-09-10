@@ -8,6 +8,7 @@ class MyPropertyListingsController < ApplicationController
 
     def show_listing
         @listing = MyPropertyListing.where(user_id: params[:id], id: params[:prop_id])
+        @inquir = Inquir.new()
     end
 
     def new_listing
