@@ -10,7 +10,7 @@
                 <span><%= link_to "Listings", my_listing_path(id: session[:user_id]) %></span>
                 <span><%= link_to "Status", status_index_path(id: session[:user_id]) %></span>
                 <span>Feed</span>
-                <span>Inquiries</span>
+                <span><%= link_to 'Inquiries', inquirs_index_path(id: Current.user.id) %></span>
                 <span>Settings</span>
                 <span><%= link_to 'Logout', session_destroy_path(), method: 'delete'%></span>
             <% else %>
