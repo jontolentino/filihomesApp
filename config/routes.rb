@@ -36,6 +36,10 @@ Rails.application.routes.draw do
   get 'u/:id/status' => 'status#index', as: 'status_index'
   get 'u/:id/status/:status_id' => 'status#show', as: 'status_show'
 
+  # setting
+  get 'u/:id/settings' => 'settings#index', as: 'settings_index'
+  patch '/u/:id/settings' => 'settings#update', as: 'settings_update'
+
 
 
 

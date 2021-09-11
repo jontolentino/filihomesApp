@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
     has_many :my_property_listings, dependent: :destroy 
     has_many :inquirs, through: :my_property_listings
-    
+    has_one_attached :user_image
 end

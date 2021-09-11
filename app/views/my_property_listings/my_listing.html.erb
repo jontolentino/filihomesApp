@@ -4,7 +4,9 @@
 <div class="my-property-listings-container">
     <div class="public-profile-container">
         <div class="public-profile-image-c">
-        <span>PP</span>
+        <% if @user.user_image.present? %>
+            <%= image_tag @user.user_image, class: "user-image-tag" %>
+        <% end %>
         </div>
         <h1 class="my-property-listings-inside-h1"><%= @user.name %> - Listings</h1>
         <% if Current.user.present? %>
