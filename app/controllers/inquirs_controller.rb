@@ -4,7 +4,7 @@ class InquirsController < ApplicationController
     def index
         # set user
         @user = User.find(params[:id])
-        @inquirs = @user.inquirs
+        @inquirs = @user.inquirs.reverse_order
     end
 
     def restrictions
