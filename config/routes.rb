@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # get '/:slug' => 'categories#show', as: 'categories_show'
   # get '/:slug/:id' => 'tasks#show_id', as: 'tasks_show_id'
   root 'pages#index'
-
+#  this is a sample comment
   # registration routes
   get '/sign_up' => 'registrations#new', as: 'registrations_new'
   post '/sign_up' => 'registrations#create', as: 'registrations_create'
